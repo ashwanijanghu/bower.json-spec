@@ -47,11 +47,22 @@ The package's semantic version number.
 *Recommended*  
 Type: `String` or `Array` of `String`
 
-The primary acting files necessary to use your package. While Bower does not directly use these files, they are listed with the commands `bower list --json` and `bower list --paths`, so they can be used by build tools.
+A one-per-extension array of entry points of module systems. If your package consists of fine-grained dependencies, you need to provide path to manifest file that imports those fine-grained dependencies. You must select one module system per asset type. In particular you must choose JavaScript module system and declare it in `moduleType`.
 
-* Preprocessor files like CoffeeScript should be compiled.
+While Bower does not directly use these files, they can be used by build tools.
+
 * Do not include minified files.
 * Filenames should not be versioned (Bad: package.1.1.0.js; Good: package.js).
+
+
+#### moduleType
+
+*Recommended*  
+Type: `String` or `Array` of `String`
+
+Module systems that your package uses and expects from all dependencies. 
+
+* `amd`, `es6`, `globals`, `node`, `yui` for JavaScript assets
 
 
 ### license
