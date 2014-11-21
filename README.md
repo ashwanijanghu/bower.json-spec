@@ -47,7 +47,7 @@ The package's semantic version number.
 *Recommended*  
 Type: `String` or `Array` of `String`
 
-A one-per-extension array of entry points of module systems. If your package consists of fine-grained dependencies, you need to provide path to manifest file that imports those fine-grained dependencies. You must select one module system per asset type. In particular you must choose JavaScript module system and declare it in `moduleType`.
+A one-per-extension array of entry points for module systems. You must select one module system per asset type. In particular you must choose JavaScript module system and declare it in `moduleType`. If your package consists of fine-grained dependencies, you need to provide path to manifest file that imports those fine-grained dependencies. 
 
 While Bower does not directly use these files, they can be used by build tools.
 
@@ -60,10 +60,12 @@ While Bower does not directly use these files, they can be used by build tools.
 *Recommended*  
 Type: `String` or `Array` of `String`
 
-Module systems that your package uses and expects from all dependencies. 
+A one-per-asset-type array of module systems that your package uses and expects from all dependencies. 
 
-* `amd`, `es6`, `globals`, `node`, `yui` for JavaScript assets
+* `amd`, `es6`, `node`, `yui` for JavaScript assets
+* `sass`, `less` for Stylesheets
 
+If you only use JavaScript globals and plain CSS, you can skip this field.
 
 ### license
 
